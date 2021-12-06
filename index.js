@@ -10,5 +10,5 @@ function clear(y) {
 let indicator  = array.length;
 function clear_all() {
     array = [];
-}
-console.log(array);
+};
+let time;
