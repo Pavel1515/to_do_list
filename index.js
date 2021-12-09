@@ -1,4 +1,4 @@
-let array = [ 13 , 12, 4324, 'gsdbfdngdb']; // память которую скреплю с базой даных
+let array = [ 13 , 12, 4324, 'gsdbfdngdb',25]; // память которую скреплю с базой даных
 let x ;
 function  add(x) {  // Функция добавление
     array[array.length] = x;
@@ -14,8 +14,12 @@ function clear_all() {  // Удаление всех закладок
 let list  ;
  for (let i = 0; i < array.length; i++) {
     list = array[i];
-    var elem = document.createElement("div");
+    var elem = document.createElement("li");
     elem.className = 'fr';
     elem.innerHTML = list;
-    document.body.append(elem);
+    let li = document.querySelector('.list')//поставил в ли елементы
+    li.appendChild(elem);
 }
+
+
+
