@@ -20,6 +20,7 @@ let list  ;
     let li = document.querySelector('.list')//поставил в ли елементы
     li.appendChild(elem);
 }
-
+let input = document.querySelector('#input');
+console.log(input);
 
 
