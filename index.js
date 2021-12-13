@@ -1,4 +1,4 @@
-let array = [ 13 , 12, 4324, 'gsdbfdngdb',25]; // память которую скреплю с базой даных
+let array = []; // память которую скреплю с базой даных
 let x ;
 function  add(x) {  // Функция добавление
     array[array.length] = x;
@@ -12,15 +12,27 @@ function clear_all() {  // Удаление всех закладок
     array = [];
 };
 let list  ;
- for (let i = 0; i < array.length; i++) {
-    list = array[i];
-    var elem = document.createElement("li");
-    elem.className = 'fr';
-    elem.innerHTML = list;
-    let li = document.querySelector('.list')//поставил в ли елементы
-    li.appendChild(elem);
+function render(){
+    for (let i = 0; i < array.length; i++) {
+        list = array[i];
+        var elem = document.createElement("li");
+        elem.className = 'fr';
+        elem.innerHTML = list;
+        let li = document.querySelector('.list')//поставил в ли елементы
+        li.appendChild(elem);
+    }
+    
 }
-let input = document.querySelector('#input');
-console.log(input);
+render();
+// ловим импут
+    let input = document.querySelector('#input');
+    input.addEventListener('keydown', function(e) {
+        if (e.keyCode === 13) {
+         add(input.value);
+         
+          render.reload();
+        }
+      })
+
 
 
